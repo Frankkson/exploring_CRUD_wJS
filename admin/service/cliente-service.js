@@ -1,10 +1,10 @@
 const listaDeClientes = () => {
 	return fetch(`http://localhost:3000/profile`).then((resposta) => {
-		resposta.json();
+		return resposta.json();
 	});
 };
 
-const criaCliente = (nome, email) => {
+const criaCliente = (email, nome) => {
 	return fetch(`http://localhost:3000/profile`, {
 		method: "POST",
 		headers: {
@@ -25,9 +25,28 @@ const removeCliente = (id) => {
 	});
 };
 
+const editaCliente = (id) => {
+	return fetch(`http://localhost:3000/profile/${id}`).then((resposta) => {
+		return resposta.json();
+	});
+};
+
+const atualizaCliente = (email, id, nome) => {
+	return fetch(`http://localhost:3000/profile/${id}`, {
+		method: "PUT",
+		headers: { "content-type": "application/json" },
+		body: JSON.stringify({ nome: nome, email: email }),
+	}).then((resposta) => {
+		return resposta.json();
+	});
+};
+
 const clienteService = {
-	listaDeClientes,
+	atualizaCliente,
 	criaCliente,
+	editaCliente,
+	listaDeClientes,
 	removeCliente,
 };
+
 export default clienteService;
