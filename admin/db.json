@@ -1,14 +1,19 @@
 {
   "profile": [
     {
-      "nome": "Franklin",
+      "nome": "Franklin Souza",
       "email": "abobora@abobrinha.com",
       "id": 2
     },
     {
       "nome": "abobora",
-      "email": "junior@gmail.com",
+      "email": "claudim72@gmail.com",
       "id": 3
+    },
+    {
+      "nome": "abobora",
+      "email": "abobora@abobora.com",
+      "id": 4
     }
   ]
 }
